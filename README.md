@@ -1,2 +1,9 @@
-# simple-calculator
-A lightweight Python calculator package providing basic arithmetic operations like addition, subtraction, multiplication, and division. Designed for easy installation directly from GitHub and simple integration into notebooks and Python projects.
+# Simple Calculator
+
+A basic Python calculator package.
+
+## Installation
+
+```bash
+pip install git+https://github.com/YOUR_USERNAME/simple-calculator.git
+```
