@@ -1,4 +1,4 @@
-from calculator.operations import add, subtract, multiply, divide
+from calculator.operations import add, subtract, multiply, divide, power
 
 
 def test_add():
@@ -15,3 +15,15 @@ def test_multiply():
 
 def test_divide():
     assert divide(10, 2) == 5
+
+def test_power(): 
+    assert power(2, m=2) == 4
+
+def test_power_zero_exponent(): 
+    assert power(5, m=0) == 1
+
+def test_power_one_exponent(): 
+    assert power(7, m=1) == 7
+
+def test_power_negative_exponent(): 
+    assert power(2, m=-2) == 0.25
