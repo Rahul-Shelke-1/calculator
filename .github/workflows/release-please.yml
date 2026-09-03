@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Release Please
-        used: release-please-oss/release-please-actions@v5
+        uses: release-please-oss/release-please-action@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           config-file: release-please-config.json
