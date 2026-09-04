@@ -43,7 +43,7 @@ jobs:
 
       - name: Publish Preview to Cloudflare Pages
         id: cloudflare_deploy
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/pages-action@v1.5.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
