@@ -29,6 +29,9 @@ jobs:
       - name: Run Docker Container
         run: docker run -d --name calculator-api -p 8080:8080 calculator-api
 
+      - name: Wait for Flask to boot up
+        run: sleep 3
+
       - name: Check Container Service
         run: docker ps
 
