@@ -1,4 +1,4 @@
-name: Python CI
+name: Continuous Integration
 
 on:
   push:
@@ -13,6 +13,7 @@ on:
 
 jobs:
   test:
+    name: Unit & Integration Tests (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
 
     strategy:
@@ -34,5 +35,48 @@ jobs:
       - name: Install Dependencies
         run: uv sync --dev --python ${{ matrix.python-version }}
 
-      - name: Run Tests
-        run: uv run pytest
+      - name: Run Unit Tests
+        run: uv run pytest test/unit
+
+      - name: Run Integration Tests
+        run: uv run pytest test/integration
+
+  docker:
+    name: Docker Environment Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Build Test Docker Image
+        run: docker build -t calculator-api .
+
+      - name: Run Temporary Docker Container
+        run: docker run -d --name calculator-api -p 8080:8080 calculator-api
+
+      - name: Wait for Flask to boot up
+        run: sleep 3
+
+      # - name: Check Container Status
+      #   run: docker ps -a
+        
+      - name: Check Container Logs
+        run: |
+          docker logs calculator-api
+
+      - name: Test API Inside Container
+        run: |
+          docker exec calculator-api python -c \
+            "import urllib.request; print(urllib.request.urlopen('http://127.0.0.1:8080/').status)"
+
+      # - name: Check Listening Ports
+      #   run: |
+      #     docker exec calculator-api sh -c "cat /proc/net/tcp"
+
+      - name: Execute API Smoke Test
+        run: curl --fail --retry 10 --retry-delay 2 http://localhost:8080/
+
+      - name: Stop Docker Container
+        if: always()
+        run: docker rm -f calculator-api

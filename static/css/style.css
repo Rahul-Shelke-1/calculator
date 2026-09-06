@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+body {
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+
+font-family: Arial, Helvetica, sans-serif;
+background: #f2f2f2;
+
+}
+
+.calculator {
+width: 100%;
+max-width: 360px;
+padding: 20px;
+
+background: #1f1f1f;
+border-radius: 20px;
+
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+}
+
+/* --------------------
+Display
+-------------------- */
+
+.display {
+min-height: 110px;
+padding: 20px;
+
+margin-bottom: 15px;
+
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: flex-end;
+
+background: #111;
+border-radius: 12px;
+
+overflow: hidden;
+
+}
+
+.expression {
+width: 100%;
+
+min-height: 25px;
+
+text-align: right;
+font-size: 18px;
+
+color: #999;
+
+overflow-x: auto;
+white-space: nowrap;
+
+}
+
+.display-value {
+width: 100%;
+
+margin-top: 5px;
+
+text-align: right;
+font-size: 42px;
+font-weight: 500;
+
+color: #fff;
+
+overflow-x: auto;
+white-space: nowrap;
+
+}
+
+/* --------------------
+Keypad
+-------------------- */
+
+.keypad {
+display: grid;
+
+grid-template-columns: repeat(4, 1fr);
+
+gap: 10px;
+
+}
+
+/* --------------------
+Buttons
+-------------------- */
+
+.key {
+height: 70px;
+
+border: none;
+border-radius: 12px;
+
+font-size: 24px;
+font-weight: 500;
+
+cursor: pointer;
+
+transition:
+    transform 0.08s ease,
+    opacity 0.08s ease;
+
+}
+
+.key:active {
+transform: scale(0.94);
+opacity: 0.8;
+}
+
+/* Numbers */
+
+.number {
+background: #333;
+color: #fff;
+}
+
+/* Operators */
+
+.operator {
+background: #ff9500;
+color: #fff;
+}
+
+/* Functions */
+
+.function {
+background: #a5a5a5;
+color: #000;
+}
+
+/* Equals */
+
+.equals {
+background: #ff9500;
+color: #fff;
+}
+
+/* Zero takes two columns */
+
+.zero {
+grid-column: span 2;
+}
+
+/* --------------------
+Mobile
+-------------------- */
+
+@media (max-width: 480px) {
+
+body {
+    align-items: stretch;
+}
+
+.calculator {
+    max-width: none;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 15px;
+
+    border-radius: 0;
+}
+
+.display {
+    min-height: 140px;
+
+    margin-bottom: 15px;
+}
+
+.display-value {
+    font-size: 40px;
+}
+
+.key {
+    height: 70px;
+}
+
+}
