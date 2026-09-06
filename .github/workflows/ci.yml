@@ -58,8 +58,8 @@ jobs:
       - name: Wait for Flask to boot up
         run: sleep 3
 
-      - name: Check Container Status
-        run: docker ps -a
+      # - name: Check Container Status
+      #   run: docker ps -a
         
       - name: Check Container Logs
         run: |
@@ -70,9 +70,9 @@ jobs:
           docker exec calculator-api python -c \
             "import urllib.request; print(urllib.request.urlopen('http://127.0.0.1:8080/').status)"
 
-      - name: Check Listening Ports
-        run: |
-          docker exec calculator-api sh -c "cat /proc/net/tcp"
+      # - name: Check Listening Ports
+      #   run: |
+      #     docker exec calculator-api sh -c "cat /proc/net/tcp"
 
       - name: Execute API Smoke Test
         run: curl --fail --retry 10 --retry-delay 2 http://localhost:8080/
