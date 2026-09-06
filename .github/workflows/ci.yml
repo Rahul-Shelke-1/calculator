@@ -58,9 +58,8 @@ jobs:
       - name: Check Container Status
         run: docker ps -a
         
-      - name: Inspect Container Logs
+      - name: Check Container Logs
         run: |
-          docker inspect calculator-api
           docker logs calculator-api
 
       - name: Test API Inside Container
