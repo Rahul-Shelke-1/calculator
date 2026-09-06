@@ -55,8 +55,13 @@ jobs:
       - name: Run Temporary Docker Container
         run: docker run -d --name calculator-api -p 8080:8080 calculator-api
 
+      - name: Check Container Service
+        run: |
+          docker ps
+          docker logs calculator-api
+
       - name: Execute API Smoke Test
-        run: curl --fail http://localhost:8080/
+        run: curl --fail --retry 10 --retry-delay 2 http://localhost:8080/
 
       - name: Stop Docker Container
         if: always()
