@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1](https://github.com/Rahul-Shelke-1/calculator/compare/v0.3.0...v0.3.1) (2026-09-06)
+
+
+### Bug Fixes
+
+* add Flask startup delay to Docker validation ([a05e486](https://github.com/Rahul-Shelke-1/calculator/commit/a05e4863d6d89d14986675ba240fc41e9ae94174))
+* **cd:** add 3 seconds pause right after starting the container ([286a029](https://github.com/Rahul-Shelke-1/calculator/commit/286a0290af1525626b729fd9c324daa8e742a47b))
+
 ## [0.3.0](https://github.com/Rahul-Shelke-1/calculator/compare/v0.2.1...v0.3.0) (2026-09-06)
 
 
