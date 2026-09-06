@@ -1,0 +1,40 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  build-test-deploy:
+    name: Build and Validate Docker Image
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Set Up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker Images
+        run: docker build -t calculator-api .
+
+      - name: Run Docker Container
+        run: docker run -d --name calculator-api -p 8080:8080 calculator-api
+
+      - name: Check Container Service
+        run: docker ps
+
+      - name: Validate API
+        run: curl --fail http://localhost:8080/ 
+
+      - name: Stop Docker Container
+        if: always() 
+        run: docker rm -f calculator-api
