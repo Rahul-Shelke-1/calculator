@@ -55,13 +55,22 @@ jobs:
       - name: Run Temporary Docker Container
         run: docker run -d --name calculator-api -p 8080:8080 calculator-api
 
-      - name: Check Container Service
+      - name: Check Container Status
         run: docker ps -a
         
-      - name: Inspect Container
+      - name: Inspect Container Logs
         run: |
           docker inspect calculator-api
           docker logs calculator-api
+
+      - name: Test API Inside Container
+        run: |
+          docker exec calculator-api python -c \
+            "import urllib.request; print(urllib.request.urlopen('http://127.0.0.1:8080/').status)"
+
+      - name: Check Listening Ports
+        run: |
+          docker exec calculator-api sh -c "cat /proc/net/tcp"
 
       - name: Execute API Smoke Test
         run: curl --fail --retry 10 --retry-delay 2 http://localhost:8080/
