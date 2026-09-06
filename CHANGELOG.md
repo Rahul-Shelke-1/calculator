@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.3.0](https://github.com/Rahul-Shelke-1/calculator/compare/v0.2.1...v0.3.0) (2026-09-06)
+
+
+### Features
+
+* add Flask application with testing, Docker, and CI/CD ([89c38a7](https://github.com/Rahul-Shelke-1/calculator/commit/89c38a7c0428a0bdaf0965aba191a2b23de83018))
+* **api:** add Flask web application ([a94b024](https://github.com/Rahul-Shelke-1/calculator/commit/a94b024139c5feb5529e1037a8b0f4df5911a073))
+
+
+### Bug Fixes
+
+* **api:** turn off reloader ([d85785f](https://github.com/Rahul-Shelke-1/calculator/commit/d85785f7601cfb5e7fd6e6dd3ded691d577af4b5))
+* **ci:** add 3 seconds pause right after starting the container ([6024333](https://github.com/Rahul-Shelke-1/calculator/commit/60243330007f533432db8322ec636d25f4ac6edd))
+* improve container API smoke test ([b159537](https://github.com/Rahul-Shelke-1/calculator/commit/b159537d755d274b6bfed9a124d7cd338832a6e2))
+
 ## [0.2.1](https://github.com/Rahul-Shelke-1/calculator/compare/v0.2.0...v0.2.1) (2026-09-04)
 
 
