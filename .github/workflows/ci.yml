@@ -57,9 +57,11 @@ jobs:
 
       - name: Check Container Service
         run: docker ps -a
-
-      - name: Check Container Logs
-        run: docker logs calculator-api
+        
+      - name: Inspect Container
+        run: |
+          docker inspect calculator-api
+          docker logs calculator-api
 
       - name: Execute API Smoke Test
         run: curl --fail --retry 10 --retry-delay 2 http://localhost:8080/
