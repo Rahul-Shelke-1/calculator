@@ -57,7 +57,7 @@ jobs:
 
       - name: Check Container Service
         run: |
-          docker ps
+          docker ps -a
           docker logs calculator-api
 
       - name: Execute API Smoke Test
