@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.2](https://github.com/Rahul-Shelke-1/calculator/compare/v0.3.1...v0.3.2) (2026-09-17)
+
+
+### Bug Fixes
+
+* **docs:** configure Cloudflare Pages preview branch ([34ef880](https://github.com/Rahul-Shelke-1/calculator/commit/34ef8802c5a568535ac23cd9d73897e9c8c2ca62))
+* update Cloudflare Pages action configuration ([31a88c2](https://github.com/Rahul-Shelke-1/calculator/commit/31a88c2a00f1df179eabf257dcad67b5774b524a))
+
+
+### Documentation
+
+* add Cloudflare Pages deployment workflow guide ([74cac74](https://github.com/Rahul-Shelke-1/calculator/commit/74cac74b86f681f2c89c8afbfb3b50eb27c469b4))
+
 ## [0.3.1](https://github.com/Rahul-Shelke-1/calculator/compare/v0.3.0...v0.3.1) (2026-09-06)
 
 
