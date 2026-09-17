@@ -32,12 +32,6 @@ def main() -> int:
     # 1. Verify token
     print("Checking Cloudflare API token...")
 
-    # response = requests.get(
-    #     f"{API_BASE}/user/tokens/verify",
-    #     headers=headers,
-    #     timeout=10,
-    # )
-
     response = requests.get(
         f"{API_BASE}/accounts/{account_id}",
         headers=headers,
