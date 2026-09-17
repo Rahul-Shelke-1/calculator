@@ -36,8 +36,8 @@ jobs:
         run: docker ps
 
       - name: Validate API
-        run: curl --fail http://localhost:8080/ 
+        run: curl --fail http://localhost:8080/
 
       - name: Stop Docker Container
-        if: always() 
+        if: always()
         run: docker rm -f calculator-api

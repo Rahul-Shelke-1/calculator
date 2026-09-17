@@ -62,9 +62,9 @@ jobs:
         with:
           message: |
             ### 🚀 Documentation Preview Deployed!
-            
+
             | Environment | Link |
             | :--- | :--- |
             | **Cloudflare Pages** | [View Preview](${{ steps.cloudflare_deploy.outputs.url }}) |
-            
+
             _Built from commit ${{ github.event.pull_request.head.sha }}._
