@@ -10,12 +10,16 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "detect-secrets>=1.5.0",
     "mike>=2.2.0",
     "mkdocs>=1.6.1",
     "mkdocs-material>=9.7.7",
     "mkdocstrings>=1.0.6",
     "mkdocstrings-python>=2.0.8",
+    "pre-commit>=4.6.2",
     "pytest>=9.1.1",
+    "python-dotenv>=1.2.3",
+    "requests>=2.34.2",
 ]
 
 [build-system]

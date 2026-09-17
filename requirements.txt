@@ -5,3 +5,7 @@ mkdocstrings
 mkdocstrings-python
 mike
 Flask
+pre-commit
+detect-secrets
+python-dotenv
+requests

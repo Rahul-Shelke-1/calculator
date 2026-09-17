@@ -13,7 +13,7 @@ Before installing, ensure you have the following requirements met:
 Install the package via `uv` from PyPI:
 
 ```bash
-uv add -r requirements.txt 
+uv add -r requirements.txt
 ```
 
 Alternatively, you can clone the repository and install it locally:

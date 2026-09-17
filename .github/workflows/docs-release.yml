@@ -60,6 +60,6 @@ jobs:
             # Typo/Patch: Simply overwrite the existing 'latest' alias documentation folder
             uv run mike deploy --push latest
           fi
-          
+
           # Ensure the main landing page always redirects to latest
           uv run mike set-default --push latest

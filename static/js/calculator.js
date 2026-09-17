@@ -92,7 +92,7 @@ async function calculate() {
 
             body: JSON.stringify(data)
         });
-        
+
         const api_response = await response.json();
 
         if (!response.ok) {
@@ -102,13 +102,13 @@ async function calculate() {
 
         expression.textContent =
             `${firstNumber} ${getOperationSymbol(operation)} ${secondNumber} =`;
-    
+
         currentInput = String(api_response.result);
-    
+
         firstNumber = null;
         operation = null;
         waitingForSecondNumber = true;
-    
+
         updateDisplay();
 
     } catch (error) {

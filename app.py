@@ -33,9 +33,10 @@ def math():
         else:
             return jsonify({"error": "Invalid operation"}), 400
 
-        return jsonify({"result" : result})
+        return jsonify({"result": result})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=False)

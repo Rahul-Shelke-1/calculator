@@ -60,7 +60,7 @@ jobs:
 
       # - name: Check Container Status
       #   run: docker ps -a
-        
+
       - name: Check Container Logs
         run: |
           docker logs calculator-api
